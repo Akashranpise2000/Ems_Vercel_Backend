@@ -21,5 +21,14 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
+// Routes
+import authRoutes from '../routes/auth.js';
+
+app.use('/api/auth', authRoutes);
+// TODO: Add other routes
+// import employeeRoutes from '../routes/employees.js';
+// app.use('/api/employees', employeeRoutes);
+// etc.
+
 // ❌ DO NOT use app.listen() here
 export default app;

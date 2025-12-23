@@ -1,17 +1,17 @@
-const express = require('express');
-const {
+import express from 'express';
+import {
   register,
   login,
   getMe,
   updateDetails,
   updatePassword
-} = require('../controllers/authController');
-const { protect } = require('../middleware/auth');
-const {
+} from '../controllers/authController.js';
+import { protect } from '../middleware/auth.js';
+import {
   validateUserRegistration,
   validateUserLogin,
   validateUserUpdate
-} = require('../middleware/validation');
+} from '../middleware/validation.js';
 
 const router = express.Router();
 
@@ -24,4 +24,4 @@ router.get('/me', protect, getMe);
 router.put('/updatedetails', protect, validateUserUpdate, updateDetails);
 router.put('/updatepassword', protect, updatePassword);
 
-module.exports = router;
+export default router;

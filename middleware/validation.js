@@ -1,4 +1,4 @@
-const { body, param, query, validationResult } = require('express-validator');
+import { body, param, query, validationResult } from 'express-validator';
 
 // Handle validation errors
 const handleValidationErrors = (req, res, next) => {
@@ -220,7 +220,7 @@ const validateDateRange = [
   handleValidationErrors
 ];
 
-module.exports = {
+export {
   validateUserRegistration,
   validateUserLogin,
   validateUserUpdate,
