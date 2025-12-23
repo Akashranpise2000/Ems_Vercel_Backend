@@ -1,4 +1,4 @@
-const User = require('../models/User');
+import User from '../models/User.js';
 
 // @desc    Get all employees
 // @route   GET /api/employees
@@ -266,7 +266,7 @@ const getEmployeeStats = async (req, res) => {
   }
 };
 
-module.exports = {
+export {
   getEmployees,
   getEmployee,
   createEmployee,

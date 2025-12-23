@@ -1,4 +1,4 @@
-const Attendance = require('../models/Attendance');
+import Attendance from '../models/Attendance.js';
 
 // @desc    Clock in
 // @route   POST /api/attendance/clock-in
@@ -255,7 +255,7 @@ const updateAttendance = async (req, res) => {
   }
 };
 
-module.exports = {
+export {
   clockIn,
   clockOut,
   getAttendance,

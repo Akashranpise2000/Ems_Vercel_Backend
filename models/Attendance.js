@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const attendanceSchema = new mongoose.Schema({
   employee: {
@@ -124,4 +124,4 @@ attendanceSchema.statics.getAttendanceStats = async function(employeeId) {
   };
 };
 
-module.exports = mongoose.model('Attendance', attendanceSchema);
+export default mongoose.model('Attendance', attendanceSchema);

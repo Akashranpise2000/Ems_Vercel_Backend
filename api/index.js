@@ -23,12 +23,13 @@ mongoose
 
 // Routes
 import authRoutes from '../routes/auth.js';
+import employeeRoutes from '../routes/employees.js';
+import attendanceRoutes from '../routes/attendance.js';
 
 app.use('/api/auth', authRoutes);
+app.use('/api/employees', employeeRoutes);
+app.use('/api/attendance', attendanceRoutes);
 // TODO: Add other routes
-// import employeeRoutes from '../routes/employees.js';
-// app.use('/api/employees', employeeRoutes);
-// etc.
 
 // ❌ DO NOT use app.listen() here
 export default app;

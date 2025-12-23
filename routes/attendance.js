@@ -1,5 +1,5 @@
-const express = require('express');
-const {
+import express from 'express';
+import {
   clockIn,
   clockOut,
   getAttendance,
@@ -7,15 +7,15 @@ const {
   getEmployeeAttendance,
   getAttendanceStats,
   updateAttendance
-} = require('../controllers/attendanceController');
-const { protect, authorize } = require('../middleware/auth');
-const {
+} from '../controllers/attendanceController.js';
+import { protect, authorize } from '../middleware/auth.js';
+import {
   validateAttendanceClockIn,
   validateAttendanceClockOut,
   validateObjectId,
   validateEmployeeId,
   validateDateRange
-} = require('../middleware/validation');
+} from '../middleware/validation.js';
 
 const router = express.Router();
 
@@ -33,4 +33,4 @@ router.get('/date/:date', authorize('admin'), getAttendanceByDate);
 router.get('/', getAttendance); // Admin gets all, employee gets their own
 router.put('/:id', authorize('admin'), validateObjectId, updateAttendance);
 
-module.exports = router;
+export default router;

@@ -1,14 +1,14 @@
-const express = require('express');
-const {
+import express from 'express';
+import {
   getEmployees,
   getEmployee,
   createEmployee,
   updateEmployee,
   deleteEmployee,
   getEmployeeStats
-} = require('../controllers/employeeController');
-const { protect, authorize, ownerOrAdmin } = require('../middleware/auth');
-const { validateObjectId } = require('../middleware/validation');
+} from '../controllers/employeeController.js';
+import { protect, authorize, ownerOrAdmin } from '../middleware/auth.js';
+import { validateObjectId } from '../middleware/validation.js';
 
 const router = express.Router();
 
@@ -26,4 +26,4 @@ router.get('/:id', validateObjectId, getEmployee);
 router.put('/:id', ownerOrAdmin, validateObjectId, updateEmployee);
 router.delete('/:id', authorize('admin'), validateObjectId, deleteEmployee);
 
-module.exports = router;
+export default router;
